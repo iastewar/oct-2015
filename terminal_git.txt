@@ -1,0 +1,263 @@
+Ians-MacBook-Pro:codecore iastewar$ ssh-keygen -t rsa -b 4096 -C "iastewar555@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/iastewar/.ssh/id_rsa): /Users/iastewar/.ssh/id_rsa_october
+Created directory '/Users/iastewar/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/iastewar/.ssh/id_rsa_october.
+Your public key has been saved in /Users/iastewar/.ssh/id_rsa_october.pub.
+The key fingesrprint is:
+3c:5b:8d:44:65:98:23:0b:81:6d:06:93:1f:b7:a2:3a iastewar555@gmail.com
+The key's randomart image is:
++--[ RSA 4096]----+
+|    o=..  .+o    |
+|    o.* o.+.     |
+|     + + +..     |
+|      o.o. o     |
+|     . .S o .    |
+|    .    +       |
+|   .    .        |
+|  E              |
+|   .             |
++-----------------+
+Ians-MacBook-Pro:codecore iastewar$ ls
+arr_to_hash.rb		fizzbuzz.rb		pluck.rb
+ascii_triangle.rb	next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ ls -a
+.			ascii_triangle.rb	pluck.rb
+..			fizzbuzz.rb
+arr_to_hash.rb		next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ cd ~/.ssh
+Ians-MacBook-Pro:.ssh iastewar$ ls
+id_rsa_october		id_rsa_october.pub
+Ians-MacBook-Pro:.ssh iastewar$ cd ~
+Ians-MacBook-Pro:~ iastewar$ man git
+Ians-MacBook-Pro:~ iastewar$ ls
+Applications	Documents	Library		Music		Public
+Desktop		Downloads	Movies		Pictures
+Ians-MacBook-Pro:~ iastewar$ cd Do
+Documents/ Downloads/
+Ians-MacBook-Pro:~ iastewar$ cd Do
+Documents/ Downloads/
+Ians-MacBook-Pro:~ iastewar$ cd Documents
+Ians-MacBook-Pro:Documents iastewar$ ls
+CPSC 522			Teams.txt
+Google Practice Problems	codecore
+Ians-MacBook-Pro:Documents iastewar$ cd codecore
+Ians-MacBook-Pro:codecore iastewar$ ls
+arr_to_hash.rb		fizzbuzz.rb		pluck.rb
+ascii_triangle.rb	next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+Ians-MacBook-Pro:codecore iastewar$ ls
+arr_to_hash.rb		fizzbuzz.rb		pluck.rb
+ascii_triangle.rb	next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ cd ..
+Ians-MacBook-Pro:Documents iastewar$ ls
+CPSC 522			Teams.txt
+Google Practice Problems	codecore
+Ians-MacBook-Pro:Documents iastewar$ cd codecore
+Ians-MacBook-Pro:codecore iastewar$ ls
+arr_to_hash.rb		fizzbuzz.rb		pluck.rb
+ascii_triangle.rb	next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ pwd
+/Users/iastewar/Documents/codecore
+Ians-MacBook-Pro:codecore iastewar$ git init
+Initialized empty Git repository in /Users/iastewar/Documents/codecore/.git/
+Ians-MacBook-Pro:codecore iastewar$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	arr_to_hash.rb
+	ascii_triangle.rb
+	fizzbuzz.rb
+	next_highest_anagram.rb
+	pluck.rb
+
+nothing added to commit but untracked files present (use "git add" to track)
+Ians-MacBook-Pro:codecore iastewar$ ls -a
+.			arr_to_hash.rb		next_highest_anagram.rb
+..			ascii_triangle.rb	pluck.rb
+.git			fizzbuzz.rb
+Ians-MacBook-Pro:codecore iastewar$ man rm
+Ians-MacBook-Pro:codecore iastewar$ man git
+Ians-MacBook-Pro:codecore iastewar$ get add *
+-bash: get: command not found
+Ians-MacBook-Pro:codecore iastewar$ git add *
+Ians-MacBook-Pro:codecore iastewar$ ls
+arr_to_hash.rb		fizzbuzz.rb		pluck.rb
+ascii_triangle.rb	next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   arr_to_hash.rb
+	new file:   ascii_triangle.rb
+	new file:   fizzbuzz.rb
+	new file:   next_highest_anagram.rb
+	new file:   pluck.rb
+
+Ians-MacBook-Pro:codecore iastewar$ git commit -m "Added day 1 Ruby files"
+[master (root-commit) 8887299] Added day 1 Ruby files
+ Committer: Ian Stewart <iastewar@Ians-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 149 insertions(+)
+ create mode 100644 arr_to_hash.rb
+ create mode 100644 ascii_triangle.rb
+ create mode 100644 fizzbuzz.rb
+ create mode 100644 next_highest_anagram.rb
+ create mode 100644 pluck.rb
+Ians-MacBook-Pro:codecore iastewar$ git status
+On branch master
+nothing to commit, working directory clean
+Ians-MacBook-Pro:codecore iastewar$ ls
+arr_to_hash.rb		fizzbuzz.rb		pluck.rb
+ascii_triangle.rb	next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ cd ..
+Ians-MacBook-Pro:Documents iastewar$ ls
+CPSC 522			Teams.txt
+Google Practice Problems	codecore
+Ians-MacBook-Pro:Documents iastewar$ cd ..
+Ians-MacBook-Pro:~ iastewar$ ls -a
+.			.irb-history		Desktop
+..			.irbhistory		Documents
+.CFUserTextEncoding	.irbrc			Downloads
+.DS_Store		.mkshrc			Library
+.Trash			.profile		Movies
+.atom			.rvm			Music
+.bash_history		.ssh			Pictures
+.bash_profile		.zlogin			Public
+.bashrc			.zshrc
+.gem			Applications
+Ians-MacBook-Pro:~ iastewar$ cd D
+Desktop/   Documents/ Downloads/
+Ians-MacBook-Pro:~ iastewar$ cd Documents/codecore/
+Ians-MacBook-Pro:codecore iastewar$ ls
+arr_to_hash.rb		fizzbuzz.rb		pluck.rb
+ascii_triangle.rb	next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ git log
+commit 8887299b98cd9ef5d26ae58e254fa2806767122c
+Author: Ian Stewart <iastewar@Ians-MacBook-Pro.local>
+Date:   Tue Oct 20 09:57:28 2015 -0700
+
+    Added day 1 Ruby files
+Ians-MacBook-Pro:codecore iastewar$ git config --global user.email "iastewar555@gmail.com"
+Ians-MacBook-Pro:codecore iastewar$ git config --global user.name "Ian Stewart"
+Ians-MacBook-Pro:codecore iastewar$ ls
+arr_to_hash.rb		fizzbuzz.rb		pluck.rb
+ascii_triangle.rb	next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ cd ~/.ssh
+Ians-MacBook-Pro:.ssh iastewar$ ls
+id_rsa_october		id_rsa_october.pub
+Ians-MacBook-Pro:.ssh iastewar$ cd id_rsa_october
+-bash: cd: id_rsa_october: Not a directory
+Ians-MacBook-Pro:.ssh iastewar$ ls
+id_rsa_october		id_rsa_october.pub
+Ians-MacBook-Pro:.ssh iastewar$ cat id_rsa_october.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwV6Ic+KA8cMk4vGtniD8uPr0sEwyF4zFKqkf56uOeLyVDkkb2TNOVGEpTYjgY3hp5X+WrRXdmVqEYP8vfVKHj9+BhbEbNhEOxwk9c262crkGk8V2WALDNF6LM44gYvQzYBsbqrKwZGbwqIA3sHOQFcN0xYJnk5RoRGmPc5YnfO7rE1ZTPHUyZ8U6ooU/+rwn/yMRnNEY2J8gzA56Bynso6L0UsJ+MhiKW3nNOiFHn9j3+5XZIlGZ6PEhjDsbfan1lxXEWlj0dtcTVKr6kC/dh6ue0B2aPdktkuMdJG/yFfcm9fHHwAugds4/thdAYNe4R3noLASQVHtMjuyR8Xk88jYVmS0L3PI6Q2+EEruMQdj4xBTvC0iR10x1GGndlbnzxP6PBVfPrKTUCY9BExfNgwpAoGuIBbRVloPOUSRpfI0xWr7V5fu0JW+I/jmtRaTrMruRfwnYRyWI5bAQxVpgrpX8VGvrBH72G8Q1RHB1vHmsK18YJjiSb1RpNm0kFr4uriJUJJa1vpj3aQLaRDGTxpTGSKl5EHrMPVDb/U2sXGvJk64QeUIVtihNF3TrYq+EVghhR/k1p2jj8hzyOdQk5bM0dvddM7bp0/NTH9jeO+IAp4JOtDkoc+m++u0/qHxNYe+futbHwGafSunWAAz40wUiJWdttEqIMIJNF6TjOOQ== iastewar555@gmail.com
+Ians-MacBook-Pro:.ssh iastewar$ man ssh-keygen
+Ians-MacBook-Pro:.ssh iastewar$ man ssh-keygen
+Ians-MacBook-Pro:.ssh iastewar$ ls
+id_rsa_october		id_rsa_october.pub
+Ians-MacBook-Pro:.ssh iastewar$ mv id_rsa_october id_rsa
+Ians-MacBook-Pro:.ssh iastewar$ ls
+id_rsa			id_rsa_october.pub
+Ians-MacBook-Pro:.ssh iastewar$ mv id_rsa_october.pub id_rsa.pub
+Ians-MacBook-Pro:.ssh iastewar$ ls
+id_rsa		id_rsa.pub
+Ians-MacBook-Pro:.ssh iastewar$ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwV6Ic+KA8cMk4vGtniD8uPr0sEwyF4zFKqkf56uOeLyVDkkb2TNOVGEpTYjgY3hp5X+WrRXdmVqEYP8vfVKHj9+BhbEbNhEOxwk9c262crkGk8V2WALDNF6LM44gYvQzYBsbqrKwZGbwqIA3sHOQFcN0xYJnk5RoRGmPc5YnfO7rE1ZTPHUyZ8U6ooU/+rwn/yMRnNEY2J8gzA56Bynso6L0UsJ+MhiKW3nNOiFHn9j3+5XZIlGZ6PEhjDsbfan1lxXEWlj0dtcTVKr6kC/dh6ue0B2aPdktkuMdJG/yFfcm9fHHwAugds4/thdAYNe4R3noLASQVHtMjuyR8Xk88jYVmS0L3PI6Q2+EEruMQdj4xBTvC0iR10x1GGndlbnzxP6PBVfPrKTUCY9BExfNgwpAoGuIBbRVloPOUSRpfI0xWr7V5fu0JW+I/jmtRaTrMruRfwnYRyWI5bAQxVpgrpX8VGvrBH72G8Q1RHB1vHmsK18YJjiSb1RpNm0kFr4uriJUJJa1vpj3aQLaRDGTxpTGSKl5EHrMPVDb/U2sXGvJk64QeUIVtihNF3TrYq+EVghhR/k1p2jj8hzyOdQk5bM0dvddM7bp0/NTH9jeO+IAp4JOtDkoc+m++u0/qHxNYe+futbHwGafSunWAAz40wUiJWdttEqIMIJNF6TjOOQ== iastewar555@gmail.com
+Ians-MacBook-Pro:.ssh iastewar$ ls
+id_rsa		id_rsa.pub
+Ians-MacBook-Pro:.ssh iastewar$ cd ~
+Ians-MacBook-Pro:~ iastewar$ cd Documents/
+Ians-MacBook-Pro:Documents iastewar$ cd codecore/
+Ians-MacBook-Pro:codecore iastewar$ ls
+arr_to_hash.rb		fizzbuzz.rb		pluck.rb
+ascii_triangle.rb	next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ git remote add origin git@github.com:iastewar/oct-2015.git
+Ians-MacBook-Pro:codecore iastewar$ git remote -v
+origin	git@github.com:iastewar/oct-2015.git (fetch)
+origin	git@github.com:iastewar/oct-2015.git (push)
+Ians-MacBook-Pro:codecore iastewar$ git push -u origin master
+The authenticity of host 'github.com (192.30.252.129)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.252.129' (RSA) to the list of known hosts.
+Saving password to keychain failed
+Identity added: /Users/iastewar/.ssh/id_rsa (/Users/iastewar/.ssh/id_rsa)
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 1.40 KiB | 0 bytes/s, done.
+Total 7 (delta 0), reused 0 (delta 0)
+To git@github.com:iastewar/oct-2015.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+Ians-MacBook-Pro:codecore iastewar$ ls
+arr_to_hash.rb		fizzbuzz.rb		pluck.rb
+ascii_triangle.rb	next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ cd ..
+Ians-MacBook-Pro:Documents iastewar$ ls
+CPSC 522			Teams.txt
+Google Practice Problems	codecore
+Ians-MacBook-Pro:Documents iastewar$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+Ians-MacBook-Pro:Documents iastewar$ mkdir codecore_tams_code
+Ians-MacBook-Pro:Documents iastewar$ cd codecore_tams_code/
+Ians-MacBook-Pro:codecore_tams_code iastewar$ ls
+Ians-MacBook-Pro:codecore_tams_code iastewar$ git clone git@github.com:CodeCoreYVR/oct-2015-ruby-and-html.git
+Cloning into 'oct-2015-ruby-and-html'...
+Warning: Permanently added the RSA host key for IP address '192.30.252.130' to the list of known hosts.
+remote: Counting objects: 21, done.
+remote: Compressing objects: 100% (18/18), done.
+remote: Total 21 (delta 0), reused 21 (delta 0), pack-reused 0
+Receiving objects: 100% (21/21), done.
+Checking connectivity... done.
+Ians-MacBook-Pro:codecore_tams_code iastewar$ ls
+oct-2015-ruby-and-html
+Ians-MacBook-Pro:codecore_tams_code iastewar$ cd oct-2015-ruby-and-html/
+Ians-MacBook-Pro:oct-2015-ruby-and-html iastewar$ ls
+day_1	day_2
+Ians-MacBook-Pro:oct-2015-ruby-and-html iastewar$ cd day_
+-bash: cd: day_: No such file or directory
+Ians-MacBook-Pro:oct-2015-ruby-and-html iastewar$ cd day_1
+Ians-MacBook-Pro:day_1 iastewar$ ls
+1_to_50.rb		grades.rb		test.rb
+50_to_1.rb		hello_worlds.rb		times.rb
+car.rb			if.rb			unless.rb
+fizz_buzz.rb		input_multiplication.rb	while.rb
+for.rb			nil.rb
+Ians-MacBook-Pro:day_1 iastewar$ cd ..
+Ians-MacBook-Pro:oct-2015-ruby-and-html iastewar$ cd ..
+Ians-MacBook-Pro:codecore_tams_code iastewar$ ls
+oct-2015-ruby-and-html
+Ians-MacBook-Pro:codecore_tams_code iastewar$ cd ..
+Ians-MacBook-Pro:Documents iastewar$ ls
+CPSC 522			codecore
+Google Practice Problems	codecore_tams_code
+Teams.txt
+Ians-MacBook-Pro:Documents iastewar$ cd codecore
+Ians-MacBook-Pro:codecore iastewar$ ls
+arr_to_hash.rb		fizzbuzz.rb		pluck.rb
+ascii_triangle.rb	next_highest_anagram.rb
+Ians-MacBook-Pro:codecore iastewar$ atom terminal_git.txt
