@@ -1,0 +1,32 @@
+ChessGame:
++player1:Player
++player2:Player
+
+Board:
++board:Piece[][]
+
+Player:
++name:String
+
+Piece (module):
+
+
+King < Piece:
+
+
+Queen < Piece:
+
+
+Knight < Piece:
+
+
+
+Bishop < Piece:
+
+
+
+Rook < Piece:
+
+
+
+Pawn < Piece:
