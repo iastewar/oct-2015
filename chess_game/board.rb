@@ -89,7 +89,7 @@ class Board
         if board[i][j].is_a? Piece
           print board[i][j].to_string
         else
-          print "   "
+          print " . "
         end
       end
       print "\n"

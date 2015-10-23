@@ -1,8 +1,8 @@
 require 'digest/sha1'
 
-#finds original password given that it is 5 letters, lower case, and uses SHA1 hashing
-def find_password(hashed_password)
-  password = %w(a a a a a)
+#finds original password given that it is n letters, lower case, and uses SHA1 hashing
+def find_password(hashed_password, n)
+  password = ("a" * n).split("");
   _find_password(hashed_password, password, 0)
   return password.join
 end
@@ -28,4 +28,4 @@ def _find_password(hashed_password, password, index)
 end
 
 
-puts find_password("aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d")
+puts find_password("aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d", 5)

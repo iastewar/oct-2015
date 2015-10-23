@@ -1,0 +1,19 @@
+body {
+  background-image: url("http://7-themes.com/data_images/out/27/6861128-road-wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+div {
+  background-color: rgba(255,0,0,0.5);
+}
+
+div h1 {
+  color: white;
+  text-align: center;
+  margin: auto;
+  font-family: serif;
+  font-weight: bold;
+  width: 50%;
+}
