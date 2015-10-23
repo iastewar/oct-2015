@@ -83,15 +83,22 @@ class Board
       print "#{i+1}  ".red
     end
     print "\n"
+    light = true
     for i in 0...board.length
       print "#{letters[i]}  ".red
       for j in 0...board.length
         if board[i][j].is_a? Piece
           print board[i][j].to_string
         else
-          print " . "
+          if light
+            print " . ".light_yellow
+          else
+            print " . ".yellow
+          end
         end
+        light ^= true
       end
+      light ^= true
       print "\n"
     end
   end
