@@ -77,13 +77,14 @@ class Board
   end
 
   def display
+    letters = ("a".."z").to_a
     print "   "
     for i in 0...board.length
-      print "#{i}  ".red
+      print "#{i+1}  ".red
     end
     print "\n"
     for i in 0...board.length
-      print "#{i}  ".red
+      print "#{letters[i]}  ".red
       for j in 0...board.length
         if board[i][j].is_a? Piece
           print board[i][j].to_string
