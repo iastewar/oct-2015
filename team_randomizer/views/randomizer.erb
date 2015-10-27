@@ -18,7 +18,9 @@
         <% if @team_error %>
           <th>Error: not enough names for the number of teams given</th>
         <% end %>
-
+        <% if @zero_error %>
+          <th>Error: number of teams must be a number greater than 0</th>
+        <% end %>
         <% if  @teams%>
           <% for i in 0...@teams.length %>
             <th><%=i+1  %></th>

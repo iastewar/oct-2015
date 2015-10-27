@@ -3,26 +3,6 @@ require 'sinatra/reloader'
 
 enable :sessions
 
-# get "/" do
-#   erb(:temperature, {layout: :app_layout})
-# end
-#
-# post "/" do
-#   @temp_c = params["temperature_c"].to_f
-#   @temp_f = @temp_c * 1.8 + 32
-#   session[:last_temp] = @temp_c
-#   erb(:temperature, {layout: :app_layout})
-# end
-#
-# get "/background" do
-#   erb(:background, {layout: :app_layout})
-# end
-#
-# post "/background" do
-#   session[:last_background] = params["background"]
-#   erb(:background, {layout: :app_layout})
-# end
-
 get "/" do
   erb(:randomizer, {layout: :app_layout})
 end
@@ -36,7 +16,8 @@ post "/" do
       @team_error = true
       return erb(:randomizer, {layout: :app_layout})
     end
-    if (params["num_teams"].to_i == 0)
+    if (params["num_teams"].to_i <= 0)
+      @zero_error = true
       return erb(:randomizer, {layout: :app_layout})
     end
     team_size = name_array.length / params["num_teams"].to_i
@@ -58,16 +39,13 @@ post "/" do
       end
       index += 1
     end
-    #either we need to add to last team, or add new teams until we reach num teams
-    if remainder != 0
-      count = 0
-      while index < name_array.length
-        @teams[count].push(name_array[index])
-        index += 1
-        count += 1
-      end
+    # need to add the remainder
+    count = 0
+    while index < name_array.length
+      @teams[count].push(name_array[index])
+      index += 1
+      count += 1
     end
-
   end
 
   erb(:randomizer, {layout: :app_layout})
