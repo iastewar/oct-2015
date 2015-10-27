@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AwesomeAnswers</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <a href="<%= root_path %>" >Home</a>
+  <a href="<%= hello_path %>" >Hello</a>
+  <hr>
+  <%= link_to("Hello", hello_path) %>
+  <%= link_to("Greeting", greeting_path("Jade")) %>
+  <hr>
+  <%= index_path %>
+  <hr>
+  <%= index_url %>
+  <hr>
+  <%= yield %>
+
+</body>
+</html>

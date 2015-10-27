@@ -1,0 +1,521 @@
+Last login: Fri Oct 23 10:02:34 on ttys001
+Ians-MacBook-Pro:~ iastewar$ brew install postgresql
+Error: postgresql-9.4.4 already installed
+To install this version, first `brew unlink postgresql'
+Ians-MacBook-Pro:~ iastewar$ ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+/Users/iastewar/Library/LaunchAgents/homebrew.mxcl.postgresql.plist -> /usr/local/opt/postgresql/homebrew.mxcl.postgresql.plist
+Ians-MacBook-Pro:~ iastewar$ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+Ians-MacBook-Pro:~ iastewar$ ps aux | grep post
+iastewar        23584   0.0  0.2  2594536  14532   ??  S     9:48am   0:00.02 /usr/local/opt/postgresql/bin/postgres -D /usr/local/var/postgres -r /usr/local/var/postgres/server.log
+iastewar        15533   0.0  0.0  2494320   1068   ??  S    Mon10am   0:00.13 /Applications/Atom.app/Contents/Frameworks/Electron Framework.framework/Resources/crashpad_handler --database=/tmp/Atom Crashes --url=http://54.249.141.255:1127/post --handshake-fd=49
+iastewar        23598   0.0  0.0  2423356    204 s001  R+    9:51am   0:00.00 grep post
+iastewar        23590   0.0  0.0  2449680    612   ??  Ss    9:48am   0:00.00 postgres: stats collector process
+iastewar        23589   0.0  0.0  2602728   1484   ??  Ss    9:48am   0:00.00 postgres: autovacuum launcher process
+iastewar        23588   0.0  0.0  2603752    756   ??  Ss    9:48am   0:00.01 postgres: wal writer process
+iastewar        23587   0.0  0.0  2603752   1796   ??  Ss    9:48am   0:00.04 postgres: writer process
+iastewar        23586   0.0  0.0  2603752    780   ??  Ss    9:48am   0:00.00 postgres: checkpointer process
+Ians-MacBook-Pro:~ iastewar$ gem install rails --no-ri --no-rdoc
+Fetching: thread_safe-0.3.5.gem (100%)
+Successfully installed thread_safe-0.3.5
+Fetching: tzinfo-1.2.2.gem (100%)
+Successfully installed tzinfo-1.2.2
+Fetching: activesupport-4.2.4.gem (100%)
+Successfully installed activesupport-4.2.4
+Fetching: rails-deprecated_sanitizer-1.0.3.gem (100%)
+Successfully installed rails-deprecated_sanitizer-1.0.3
+Fetching: mini_portile-0.6.2.gem (100%)
+Successfully installed mini_portile-0.6.2
+Fetching: nokogiri-1.6.6.2.gem (100%)
+Building native extensions.  This could take a while...
+ERROR:  Error installing rails:
+	ERROR: Failed to build gem native extension.
+
+    /Users/iastewar/.rvm/rubies/ruby-2.2.0/bin/ruby -r ./siteconf20151026-23604-1qf1a1c.rb extconf.rb
+checking if the C compiler accepts ... yes
+checking if the C compiler accepts -Wno-error=unused-command-line-argument-hard-error-in-future... no
+Building nokogiri using packaged libraries.
+-----
+The file "/usr/include/iconv.h" is missing in your build environment,
+which means you haven't installed Xcode Command Line Tools properly.
+
+To install Command Line Tools, try running `xcode-select --install` on
+terminal and follow the instructions.  If it fails, open Xcode.app,
+select from the menu "Xcode" - "Open Developer Tool" - "More Developer
+Tools" to open the developer site, download the installer for your OS
+version and run it.
+-----
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/iastewar/.rvm/rubies/ruby-2.2.0/bin/$(RUBY_BASE_NAME)
+	--help
+	--clean
+	--use-system-libraries
+	--enable-static
+	--disable-static
+	--with-zlib-dir
+	--without-zlib-dir
+	--with-zlib-include
+	--without-zlib-include=${zlib-dir}/include
+	--with-zlib-lib
+	--without-zlib-lib=${zlib-dir}/lib
+	--enable-cross-build
+	--disable-cross-build
+
+extconf failed, exit code 1
+
+Gem files will remain installed in /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/nokogiri-1.6.6.2 for inspection.
+Results logged to /Users/iastewar/.rvm/gems/ruby-2.2.0/extensions/x86_64-darwin-14/2.2.0-static/nokogiri-1.6.6.2/gem_make.out
+Ians-MacBook-Pro:~ iastewar$ ls
+Applications	Documents	Library		Music		Public
+Desktop		Downloads	Movies		Pictures
+Ians-MacBook-Pro:~ iastewar$ cd Documents/
+Ians-MacBook-Pro:Documents iastewar$ ls
+CPSC 522			codecore
+Google Practice Problems	codecore_tams_code
+Teams.txt
+Ians-MacBook-Pro:Documents iastewar$ cd codecore
+Ians-MacBook-Pro:codecore iastewar$ ls
+chess_game		sinatra			terminal_git.txt
+html			team_randomizer
+ruby			temperature
+Ians-MacBook-Pro:codecore iastewar$ mkdir rails
+Ians-MacBook-Pro:codecore iastewar$ ls
+chess_game		ruby			temperature
+html			sinatra			terminal_git.txt
+rails			team_randomizer
+Ians-MacBook-Pro:codecore iastewar$ cd rails/
+Ians-MacBook-Pro:rails iastewar$ ls
+Ians-MacBook-Pro:rails iastewar$ rails new awesome_answers -d postgresql -T
+Rails is not currently installed on this system. To get the latest version, simply type:
+
+    $ sudo gem install rails
+
+You can then rerun your "rails" command.
+Ians-MacBook-Pro:rails iastewar$ sudo gem install rails
+Password:
+Fetching: thread_safe-0.3.5.gem (100%)
+Successfully installed thread_safe-0.3.5
+Fetching: tzinfo-1.2.2.gem (100%)
+Successfully installed tzinfo-1.2.2
+Fetching: i18n-0.7.0.gem (100%)
+Successfully installed i18n-0.7.0
+Fetching: activesupport-4.2.4.gem (100%)
+Successfully installed activesupport-4.2.4
+Fetching: rails-deprecated_sanitizer-1.0.3.gem (100%)
+Successfully installed rails-deprecated_sanitizer-1.0.3
+Fetching: mini_portile-0.6.2.gem (100%)
+Successfully installed mini_portile-0.6.2
+Fetching: nokogiri-1.6.6.2.gem (100%)
+Building native extensions.  This could take a while...
+ERROR:  Error installing rails:
+	ERROR: Failed to build gem native extension.
+
+    /Users/iastewar/.rvm/rubies/ruby-2.2.0/bin/ruby -r ./siteconf20151026-23636-1koumti.rb extconf.rb
+checking if the C compiler accepts ... yes
+checking if the C compiler accepts -Wno-error=unused-command-line-argument-hard-error-in-future... no
+Building nokogiri using packaged libraries.
+-----
+The file "/usr/include/iconv.h" is missing in your build environment,
+which means you haven't installed Xcode Command Line Tools properly.
+
+To install Command Line Tools, try running `xcode-select --install` on
+terminal and follow the instructions.  If it fails, open Xcode.app,
+select from the menu "Xcode" - "Open Developer Tool" - "More Developer
+Tools" to open the developer site, download the installer for your OS
+version and run it.
+-----
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/iastewar/.rvm/rubies/ruby-2.2.0/bin/$(RUBY_BASE_NAME)
+	--help
+	--clean
+	--use-system-libraries
+	--enable-static
+	--disable-static
+	--with-zlib-dir
+	--without-zlib-dir
+	--with-zlib-include
+	--without-zlib-include=${zlib-dir}/include
+	--with-zlib-lib
+	--without-zlib-lib=${zlib-dir}/lib
+	--enable-cross-build
+	--disable-cross-build
+
+extconf failed, exit code 1
+
+Gem files will remain installed in /Users/iastewar/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/nokogiri-1.6.6.2 for inspection.
+Results logged to /Users/iastewar/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/extensions/x86_64-darwin-14/2.2.0-static/nokogiri-1.6.6.2/gem_make.out
+Ians-MacBook-Pro:rails iastewar$ rails new awesome_answers -d postgresql -T
+Rails is not currently installed on this system. To get the latest version, simply type:
+
+    $ sudo gem install rails
+
+You can then rerun your "rails" command.
+Ians-MacBook-Pro:rails iastewar$ xcode-select --install
+xcode-select: note: install requested for command line developer tools
+Ians-MacBook-Pro:rails iastewar$ gem install rails --no-ri --no-rdoc
+Building native extensions.  This could take a while...
+Successfully installed nokogiri-1.6.6.2
+Fetching: rails-dom-testing-1.0.7.gem (100%)
+Successfully installed rails-dom-testing-1.0.7
+Fetching: loofah-2.0.3.gem (100%)
+Successfully installed loofah-2.0.3
+Fetching: rails-html-sanitizer-1.0.2.gem (100%)
+Successfully installed rails-html-sanitizer-1.0.2
+Fetching: erubis-2.7.0.gem (100%)
+Successfully installed erubis-2.7.0
+Fetching: builder-3.2.2.gem (100%)
+Successfully installed builder-3.2.2
+Fetching: actionview-4.2.4.gem (100%)
+Successfully installed actionview-4.2.4
+Fetching: actionpack-4.2.4.gem (100%)
+Successfully installed actionpack-4.2.4
+Fetching: sprockets-3.4.0.gem (100%)
+Successfully installed sprockets-3.4.0
+Fetching: sprockets-rails-2.3.3.gem (100%)
+Successfully installed sprockets-rails-2.3.3
+Fetching: bundler-1.10.6.gem (100%)
+Successfully installed bundler-1.10.6
+Fetching: thor-0.19.1.gem (100%)
+Successfully installed thor-0.19.1
+Fetching: railties-4.2.4.gem (100%)
+Successfully installed railties-4.2.4
+Fetching: globalid-0.3.6.gem (100%)
+Successfully installed globalid-0.3.6
+Fetching: activejob-4.2.4.gem (100%)
+Successfully installed activejob-4.2.4
+Fetching: mime-types-2.6.2.gem (100%)
+Successfully installed mime-types-2.6.2
+Fetching: mail-2.6.3.gem (100%)
+Successfully installed mail-2.6.3
+Fetching: actionmailer-4.2.4.gem (100%)
+Successfully installed actionmailer-4.2.4
+Fetching: arel-6.0.3.gem (100%)
+Successfully installed arel-6.0.3
+Fetching: activemodel-4.2.4.gem (100%)
+Successfully installed activemodel-4.2.4
+Fetching: activerecord-4.2.4.gem (100%)
+Successfully installed activerecord-4.2.4
+Fetching: rails-4.2.4.gem (100%)
+Successfully installed rails-4.2.4
+22 gems installed
+Ians-MacBook-Pro:rails iastewar$ rails new awesome_answers -d postgresql -T
+      create
+      create  README.rdoc
+      create  Rakefile
+      create  config.ru
+      create  .gitignore
+      create  Gemfile
+      create  app
+      create  app/assets/javascripts/application.js
+      create  app/assets/stylesheets/application.css
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  app/views/layouts/application.html.erb
+      create  app/assets/images/.keep
+      create  app/mailers/.keep
+      create  app/models/.keep
+      create  app/controllers/concerns/.keep
+      create  app/models/concerns/.keep
+      create  bin
+      create  bin/bundle
+      create  bin/rails
+      create  bin/rake
+      create  bin/setup
+      create  config
+      create  config/routes.rb
+      create  config/application.rb
+      create  config/environment.rb
+      create  config/secrets.yml
+      create  config/environments
+      create  config/environments/development.rb
+      create  config/environments/production.rb
+      create  config/environments/test.rb
+      create  config/initializers
+      create  config/initializers/assets.rb
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/cookies_serializer.rb
+      create  config/initializers/filter_parameter_logging.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/session_store.rb
+      create  config/initializers/wrap_parameters.rb
+      create  config/locales
+      create  config/locales/en.yml
+      create  config/boot.rb
+      create  config/database.yml
+      create  db
+      create  db/seeds.rb
+      create  lib
+      create  lib/tasks
+      create  lib/tasks/.keep
+      create  lib/assets
+      create  lib/assets/.keep
+      create  log
+      create  log/.keep
+      create  public
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/favicon.ico
+      create  public/robots.txt
+      create  tmp/cache
+      create  tmp/cache/assets
+      create  vendor/assets/javascripts
+      create  vendor/assets/javascripts/.keep
+      create  vendor/assets/stylesheets
+      create  vendor/assets/stylesheets/.keep
+         run  bundle install
+Fetching gem metadata from https://rubygems.org/............
+Fetching version metadata from https://rubygems.org/...
+Fetching dependency metadata from https://rubygems.org/..
+Resolving dependencies....
+Using rake 10.4.2
+Using i18n 0.7.0
+Installing json 1.8.3 with native extensions
+Installing minitest 5.8.1
+Using thread_safe 0.3.5
+Using tzinfo 1.2.2
+Using activesupport 4.2.4
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile 0.6.2
+Using nokogiri 1.6.6.2
+Using rails-deprecated_sanitizer 1.0.3
+Using rails-dom-testing 1.0.7
+Using loofah 2.0.3
+Using rails-html-sanitizer 1.0.2
+Using actionview 4.2.4
+Using rack 1.6.4
+Using rack-test 0.6.3
+Using actionpack 4.2.4
+Using globalid 0.3.6
+Using activejob 4.2.4
+Using mime-types 2.6.2
+Using mail 2.6.3
+Using actionmailer 4.2.4
+Using activemodel 4.2.4
+Using arel 6.0.3
+Using activerecord 4.2.4
+Installing debug_inspector 0.0.2 with native extensions
+Installing binding_of_caller 0.7.2 with native extensions
+Using bundler 1.10.6
+Installing byebug 6.0.2 with native extensions
+Installing coffee-script-source 1.9.1.1
+Installing execjs 2.6.0
+Installing coffee-script 2.4.1
+Using thor 0.19.1
+Using railties 4.2.4
+Installing coffee-rails 4.1.0
+Using multi_json 1.11.2
+Installing jbuilder 2.3.2
+Installing jquery-rails 4.0.5
+Installing pg 0.18.3 with native extensions
+Using sprockets 3.4.0
+Using sprockets-rails 2.3.3
+Using rails 4.2.4
+Using rdoc 4.2.0
+Installing sass 3.4.19
+Using tilt 2.0.1
+Installing sass-rails 5.0.4
+Installing sdoc 0.4.1
+Installing spring 1.4.0
+Installing turbolinks 2.5.3
+Installing uglifier 2.7.2
+Installing web-console 2.2.1
+Bundle complete! 12 Gemfile dependencies, 53 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+         run  bundle exec spring binstub --all
+* bin/rake: spring inserted
+* bin/rails: spring inserted
+Ians-MacBook-Pro:rails iastewar$ ls
+awesome_answers
+Ians-MacBook-Pro:rails iastewar$ cd awesome_answers/
+Ians-MacBook-Pro:awesome_answers iastewar$ ls
+Gemfile		Rakefile	config		lib		tmp
+Gemfile.lock	app		config.ru	log		vendor
+README.rdoc	bin		db		public
+Ians-MacBook-Pro:awesome_answers iastewar$ bundle
+Using rake 10.4.2
+Using i18n 0.7.0
+Using json 1.8.3
+Using minitest 5.8.1
+Using thread_safe 0.3.5
+Using tzinfo 1.2.2
+Using activesupport 4.2.4
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile 0.6.2
+Using nokogiri 1.6.6.2
+Using rails-deprecated_sanitizer 1.0.3
+Using rails-dom-testing 1.0.7
+Using loofah 2.0.3
+Using rails-html-sanitizer 1.0.2
+Using actionview 4.2.4
+Using rack 1.6.4
+Using rack-test 0.6.3
+Using actionpack 4.2.4
+Using globalid 0.3.6
+Using activejob 4.2.4
+Using mime-types 2.6.2
+Using mail 2.6.3
+Using actionmailer 4.2.4
+Using activemodel 4.2.4
+Using arel 6.0.3
+Using activerecord 4.2.4
+Using debug_inspector 0.0.2
+Using binding_of_caller 0.7.2
+Using byebug 6.0.2
+Using coffee-script-source 1.9.1.1
+Using execjs 2.6.0
+Using coffee-script 2.4.1
+Using thor 0.19.1
+Using railties 4.2.4
+Using coffee-rails 4.1.0
+Using multi_json 1.11.2
+Using jbuilder 2.3.2
+Using jquery-rails 4.0.5
+Using pg 0.18.3
+Using bundler 1.10.6
+Using sprockets 3.4.0
+Using sprockets-rails 2.3.3
+Using rails 4.2.4
+Using rdoc 4.2.0
+Using sass 3.4.19
+Using tilt 2.0.1
+Using sass-rails 5.0.4
+Using sdoc 0.4.1
+Using spring 1.4.0
+Using turbolinks 2.5.3
+Using uglifier 2.7.2
+Using web-console 2.2.1
+Bundle complete! 12 Gemfile dependencies, 53 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Ians-MacBook-Pro:awesome_answers iastewar$
+
+iastewar$ bin/rails s
+=> Booting WEBrick
+=> Rails 4.2.4 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2015-10-26 10:47:24] INFO  WEBrick 1.3.1
+[2015-10-26 10:47:24] INFO  ruby 2.2.0 (2014-12-25) [x86_64-darwin14]
+[2015-10-26 10:47:24] INFO  WEBrick::HTTPServer#start: pid=44693 port=3000
+
+
+Started GET "/" for ::1 at 2015-10-26 10:50:25 -0700
+
+ActiveRecord::NoDatabaseError (FATAL:  database "awesome_answers_development" does not exist
+):
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:665:in `rescue in connect'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `connect'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+  /Users/iastewar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+  /Users/iastewar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+  activerecord (4.2.4) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.4) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/iastewar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/iastewar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/iastewar/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.0ms)
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.3ms)
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (99.2ms)
+^C[2015-10-26 10:50:48] INFO  going to shutdown ...
+[2015-10-26 10:50:49] INFO  WEBrick::HTTPServer#start done.
+Exiting
+Ians-MacBook-Pro:awesome_answers iastewar$ bin/rake db:create
+Ians-MacBook-Pro:awesome_answers iastewar$ bin/rails s
+=> Booting WEBrick
+=> Rails 4.2.4 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2015-10-26 10:51:56] INFO  WEBrick 1.3.1
+[2015-10-26 10:51:56] INFO  ruby 2.2.0 (2014-12-25) [x86_64-darwin14]
+[2015-10-26 10:51:56] INFO  WEBrick::HTTPServer#start: pid=44704 port=3000
+
+
+Started GET "/" for ::1 at 2015-10-26 10:51:59 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/iastewar/.rvm/gems/ruby-2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (1.1ms)
+Completed 200 OK in 15ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+Ians-MacBook-Pro:awesome_answers iastewar$ bin/rails g controller welcome

@@ -39,14 +39,16 @@ post "/" do
     if (params["num_teams"].to_i == 0)
       return erb(:randomizer, {layout: :app_layout})
     end
-    team_size = name_array.length / params["num_teams"].to_f
+    team_size = name_array.length / params["num_teams"].to_i
+    remainder = name_array.length % params["num_teams"].to_i
     name_array.shuffle!
     count = 0
     team_count = 0
     @teams = []
     team = []
-    name_array.each do |name|
-      team[count] = name
+    index = 0
+    while index < name_array.length-remainder
+      team[count] = name_array[index]
       count += 1
       if count >= team_size
         @teams[team_count] = team
@@ -54,7 +56,18 @@ post "/" do
         count = 0
         team_count += 1
       end
+      index += 1
     end
+    #either we need to add to last team, or add new teams until we reach num teams
+    if remainder != 0
+      count = 0
+      while index < name_array.length
+        @teams[count].push(name_array[index])
+        index += 1
+        count += 1
+      end
+    end
+
   end
 
   erb(:randomizer, {layout: :app_layout})

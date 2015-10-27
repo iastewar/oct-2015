@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Temperature Convertor</title>
+  </head>
+  <body style="background-color: <%= session[:last_background]%>">
+    <nav>
+      <a href = "/background">Background</a> |
+      <a href = "/">Home</a>
+    </nav>
+    <% if session[:last_temp] %>
+      Last converted temp: <%= session[:last_temp]%>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<form method="post" action="/">
+  <div>
+    <label for="temperature-c">Temperature in C</label>
+    <input type="text" id="temperature-c" name="temperature_c" value = "<%= @temp_c %>">
+  </div>
+  <div>
+    <input type="submit" value="Convert to F">
+  </div>
+</form>
+<div>
+  <p><%= @temp_f %></p>
+</div>
