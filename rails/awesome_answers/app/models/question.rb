@@ -9,7 +9,17 @@ class Question < ActiveRecord::Base
 
   validate :no_monkey
 
-  after_initialize :set_default_values
+  after_initialize :set_default_values #initialize, validation, save, commit
+
+#  scope :recent_ten, lambda { order("created_at DESC").limit(10) }
+#  same as:
+  def  self.recent_ten
+    order("created_at DESC").limit(10)
+  end
+
+  def self.search(string)
+    where(["title ILIKE :search_term OR body ILIKE :search_term", {search_term: "%#{string}%"}])
+  end
 
   private
 
