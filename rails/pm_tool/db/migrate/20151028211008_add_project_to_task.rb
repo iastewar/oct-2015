@@ -1,5 +1,5 @@
 class AddProjectToTask < ActiveRecord::Migration
   def change
-    add_column :tasks, :project, :text
+    add_reference :tasks, :project
   end
 end

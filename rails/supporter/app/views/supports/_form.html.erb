@@ -1,0 +1,77 @@
+<%= @s.errors.full_messages.join(", ") %>
+<%= form_for @s do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%#= f.radio_button :department, "Sales", class: "form-control" %>
+    <%#= f.label :department, "Sales", :value => "Sales" %>
+    <%#= f.radio_button :department, "Marketing", class: "form-control" %>
+    <%#= f.label :department, "Marketing" %>
+    <%#= f.radio_button :department, "Technical", class: "form-control" %>
+    <%#= f.label :department, "Technical" %>
+    <div class="row">
+      <div class="col-lg-2">
+       <div class="input-group">
+         <span class="input-group-addon">
+           <%= f.radio_button :department, "Sales" %>
+         </span>
+         <%= f.label :department, "Sales", class: "form-control" %>
+       </div><!-- /input-group -->
+     </div><!-- /.col-lg-6 -->
+     <div class="col-lg-2">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <%= f.radio_button :department, "Marketing" %>
+        </span>
+        <%= f.label :department, "Marketing", class: "form-control" %>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+    <div class="col-lg-2">
+     <div class="input-group">
+       <span class="input-group-addon">
+         <%= f.radio_button :department, "Technical" %>
+       </span>
+       <%= f.label :department, "Technical", class: "form-control" %>
+     </div><!-- /input-group -->
+   </div><!-- /.col-lg-6 -->
+  </div>
+
+  </div>
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.text_area :message, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%#= f.radio_button :done, true, class: "form-control" %>
+    <%#= f.label :department, "Done", :value => true %>
+    <%#= f.radio_button :done, false, :checked => true, class: "form-control" %>
+    <%#= f.label :department, "Not Done", :value => false %>
+
+    <div class="row">
+      <div class="col-lg-2">
+       <div class="input-group">
+         <span class="input-group-addon">
+           <%= f.radio_button :done, true %>
+         </span>
+         <%= f.label :department, "Done", :value => true,  class: "form-control" %>
+       </div><!-- /input-group -->
+     </div><!-- /.col-lg-6 -->
+     <div class="col-lg-2">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <%= f.radio_button :done, false, :checked => true %>
+        </span>
+        <%= f.label :department, "Not Done", :value => false, class: "form-control" %>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </div>
+
+  </div>
+  <%= f.submit class: "btn btn-primary"%>
+<% end %>

@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20151028211008) do
     t.datetime "due_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text     "project"
+    t.integer  "project_id"
   end
 
 end

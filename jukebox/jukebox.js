@@ -4,7 +4,7 @@ var parseNote = function(noteStr) {
     return;
   var note = {};
   note.pitch = noteArray[0];
-  if (noteArray.length == 2)
+  if (noteArray.length === 2)
     note.beats = parseInt(noteArray[1]);
   else
     note.beats = 1

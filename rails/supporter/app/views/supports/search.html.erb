@@ -1,0 +1,57 @@
+<h1>Search Results for <%= @search_string %></h1>
+<p>Found <%= @supports_name_length %> results for name,
+  <%= @supports_email_length %> results for email, and
+  <%= @supports_message_length %> results for message</p>
+<div>
+  <% done_supports = @supports_name.where(done: true) %>
+  <% not_done_supports = @supports_name.where(done: false) %>
+  <% not_done_supports.each do |s| %>
+    <div class="well">
+        <%= link_to s.name, support_path(s) %>
+        <%= "Not Done" %>
+    </div>
+  <% end %>
+  <% done_supports.each do |s| %>
+    <div class="well">
+        <%= link_to s.name, support_path(s) %>
+        <%= "Done"%>
+    </div>
+  <% end %>
+</div>
+<div>
+  <% done_supports = @supports_email.where(done: true) %>
+  <% not_done_supports = @supports_email.where(done: false) %>
+  <% not_done_supports.each do |s| %>
+    <div class="well">
+        <%= link_to s.name, support_path(s) %>
+        <a href="mailto:<%= s.email %>"><%= s.email %></a>
+        <%= "Not Done" %>
+    </div>
+  <% end %>
+  <% done_supports.each do |s| %>
+    <div class="well">
+        <%= link_to s.name, support_path(s) %>
+        <a href="mailto:<%= s.email %>"><%= s.email %></a>
+        <%= "Done"%>
+    </div>
+  <% end %>
+</div>
+<div>
+  <% done_supports = @supports_message.where(done: true) %>
+  <% not_done_supports = @supports_message.where(done: false) %>
+  <% not_done_supports.each do |s| %>
+    <div class="well">
+        <%= link_to s.name, support_path(s) %>
+        <%= s.message %>
+        <%= "Not Done" %>
+    </div>
+  <% end %>
+  <% done_supports.each do |s| %>
+    <div class="well">
+        <%= link_to s.name, support_path(s) %>
+        <%= s.message %>
+        <%= "Done"%>
+    </div>
+  <% end %>
+</div>
+<%= paginate @supports %>

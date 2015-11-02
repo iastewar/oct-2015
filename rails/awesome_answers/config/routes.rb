@@ -9,6 +9,15 @@ Rails.application.routes.draw do
 
   get "/greeting/:name" => "welcome#greeting", as: :greeting
 
+  resources :questions
+  # get "/questions/new" => "questions#new", as: :new_question
+  # post "/questions" => "questions#create", as: :questions
+  # get "/questions/:id" => "questions#show", as: :question
+  # get "/questions/:id/edit" => "questions#edit", as: :edit_question
+  # patch "/questions/:id" => "questions#update"
+  # get "/questions" => "questions#index"
+  # delete "/questions/:id" => "questions#destroy"
+
   root "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

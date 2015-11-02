@@ -1,0 +1,28 @@
+<h1>All Supporters</h1>
+<%= form_tag(:supports_search, method: "get") do %>
+  <div class="form-group">
+    <%= text_field :search, :search, class: "form-control" %>
+    <%= submit_tag("Search", class: "btn btn-info") %>
+    <%#= f.submit class: "btn btn-info"%>
+  </div>
+<% end %>
+<div>
+  <%= link_to("New Supporter", new_support_path, class: "btn btn-primary") %>
+</div>
+<div>
+  <% done_supports = @supports.where(done: true) %>
+  <% not_done_supports = @supports.where(done: false) %>
+  <% not_done_supports.each do |s| %>
+    <div class="well">
+        <%= link_to s.name, support_path(s) %>
+        <%= "Not Done" %>
+    </div>
+  <% end %>
+  <% done_supports.each do |s| %>
+    <div class="well">
+        <%= link_to s.name, support_path(s) %>
+        <%= "Done"%>
+    </div>
+  <% end %>
+</div>
+<%= paginate @supports %>
