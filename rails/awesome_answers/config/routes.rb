@@ -9,7 +9,19 @@ Rails.application.routes.draw do
 
   get "/greeting/:name" => "welcome#greeting", as: :greeting
 
-  resources :questions
+  resources :questions do
+    # get :search, on: :collection # /questions/search, automatic path helper search_questions_path
+    # get :search, on: :member
+    # get :search # nested resource route that is /questions/:question_id/search, question_search_path
+    resources :answers
+  end
+
+  resources :users, only: [:new, :create]
+
+  resources :sessions, only: [:new, :create] do
+    delete :destroy, on: :collection
+  end
+
   # get "/questions/new" => "questions#new", as: :new_question
   # post "/questions" => "questions#create", as: :questions
   # get "/questions/:id" => "questions#show", as: :question

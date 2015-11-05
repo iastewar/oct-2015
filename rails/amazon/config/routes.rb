@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   post "/items" => "items#create", as: :items
   get "/items/:id" => "items#show", as: :item
 
+  resources :items do
+    resources :comments
+  end
+
   root "items#new"
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,9 @@
+<h1>All Code Snippets</h1>
+<%= link_to("New Snippet", new_snippet_path, class: "btn btn-primary") %>
+<div>
+  <% @snippet_languages.each do |language_snippets| %>
+    <div class="well">
+        <%= link_to "#{language_snippets[0]} (#{language_snippets[1].length} Snippets)", indexs_snippets_path(language_snippets[0]) %>
+    </div>
+  <% end %>
+</div>

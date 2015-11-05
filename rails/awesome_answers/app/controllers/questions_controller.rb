@@ -1,6 +1,8 @@
 class QuestionsController < ApplicationController
 
   def new
+    authenticate_user
+
     @q = Question.new
   end
 
@@ -25,6 +27,8 @@ class QuestionsController < ApplicationController
 
   def show
     @q = Question.find(params[:id])
+    # need a form on the show page to create an answer for the question
+    @answer = Answer.new
     #render text: params
   end
 

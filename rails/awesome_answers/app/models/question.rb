@@ -1,4 +1,6 @@
 class Question < ActiveRecord::Base
+  has_many :answers, dependent: :destroy # or nullify - to make all question_id values null (dependent to maintain referential integriry)
+  # gives method answers to Question (to create an answer: q.answers.create)
 
   validates(:title, {presence: true,
                      uniqueness: {message: "was used already"},

@@ -1,3 +1,19 @@
 <h1><%= @i.title %></h1>
 <p><%= number_to_currency @i.price %></p>
 <p><%= @i.description %></p>
+
+<h2>Comments</h2>
+<%= @comment.errors.full_messages.join(", ") %>
+<%= form_for [@i, @comment] do |f| %> <!-- if not persisted post request, else patch request -->
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, value: @comment.body, class: "form-control" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+<ul>
+  <% @comments.each do |c| %>
+    <li><%= c.body %></li>
+  <% end %>
+</ul>

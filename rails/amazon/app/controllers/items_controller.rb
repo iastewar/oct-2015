@@ -16,6 +16,8 @@ class ItemsController < ApplicationController
 
   def show
     @i = Item.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.where item: @i
   end
 
 

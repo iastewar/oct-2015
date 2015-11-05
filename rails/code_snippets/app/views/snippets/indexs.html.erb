@@ -1,0 +1,9 @@
+<h1><%= @language %> Code Snippets</h1>
+
+<div>
+  <% @snippets.each do |s| %>
+    <div class="well">
+        <%= link_to s.title, snippet_path(s) %>
+    </div>
+  <% end %>
+</div>
