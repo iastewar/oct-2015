@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :users, only: [:new, :create]
+
+  resources :sessions, only: [:new, :create] do
+    delete :destroy, on: :collection
+  end
+
   get "/items/new" => "items#new", as: :new_item
   post "/items" => "items#create", as: :items
   get "/items/:id" => "items#show", as: :item

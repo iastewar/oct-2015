@@ -7,7 +7,8 @@ class CreateSnippets < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+      add_index :snippets, :kind
   end
 
-  add_index :snippets, :kind
+
 end

@@ -24,4 +24,6 @@ ActiveRecord::Schema.define(version: 20151105000832) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "snippets", ["kind"], name: "index_snippets_on_kind", using: :btree
+
 end
