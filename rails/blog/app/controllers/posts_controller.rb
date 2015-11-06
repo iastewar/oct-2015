@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @p = Post.new
@@ -15,6 +16,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comments = @p.comments.order(created_at: :desc)
+    @comment = Comment.new
   end
 
   def edit

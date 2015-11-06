@@ -1,8 +1,14 @@
 <h1><%= @q.title %></h1>
 <p><%= @q.body %></p>
+<p>Created by: <%= @q.user.first_name %> <%= @q.user.last_name %></p>
 
-<%= link_to "Edit", edit_question_path(@q), class: "btn btn-info btn-sm" %>
-<%= link_to "Delete", question_path(@q), {method: :delete, class: "btn btn-danger btn-sm", data: {confirm: "Are you sure?"}}%>
+
+<% if can? :edit, @q %>
+  <%= link_to "Edit", edit_question_path(@q), class: "btn btn-info btn-sm" %>
+<% end %>
+<% if can? :destroy, @q %>
+  <%= link_to "Delete", question_path(@q), {method: :delete, class: "btn btn-danger btn-sm", data: {confirm: "Are you sure?"}}%>
+<% end %>
 
 <h2>Submit an Answer</h2>
 <%= @answer.errors.full_messages.join(", ") %>
@@ -18,6 +24,8 @@
 <% @q.answers.each do |answer| %>
   <div class="well">
     <%= answer.body %>
-    <%= link_to "Delete", question_answer_path(@q, answer), method: :delete, class: "btn btn-danger pull-right", data: {confirm: "Are you sure?"}%>
+    <% if can? :destroy, answer %>
+      <%= link_to "Delete", question_answer_path(@q, answer), method: :delete, class: "btn btn-danger pull-right", data: {confirm: "Are you sure?"}%>
+    <% end %>
   </div>
 <% end %>

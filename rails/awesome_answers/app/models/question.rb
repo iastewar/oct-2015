@@ -1,4 +1,5 @@
 class Question < ActiveRecord::Base
+  belongs_to :user
   has_many :answers, dependent: :destroy # or nullify - to make all question_id values null (dependent to maintain referential integriry)
   # gives method answers to Question (to create an answer: q.answers.create)
 

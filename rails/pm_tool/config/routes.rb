@@ -5,7 +5,15 @@ Rails.application.routes.draw do
 
   get "/about" => "home#about"
 
-  resources :projects
+  resources :projects do
+    resources :tasks do
+      post :done, on: :member
+    end
+
+    resources :discussions do
+      resources :comments
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem "bootstrap-sass"
 
+gem 'cancancan', '~> 1.10'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'       #require: false can be another option
 # Use postgresql as the database for Active Record
@@ -39,6 +41,8 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do # can do inline as well
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem "quiet_assets"
+
 end
 
 group :development do

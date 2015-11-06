@@ -15,7 +15,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
-
+    @tasks_done = @p.tasks.where(done: true)
+    @tasks_not_done = @p.tasks.where(done: false)
+    @task = Task.new
   end
 
   def edit

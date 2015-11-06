@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   get "/about" => "home#about"
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
   resources :users, only: [:new, :create]
 

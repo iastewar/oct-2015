@@ -1,9 +1,10 @@
 class AnswersController < ApplicationController
+  before_action :authenticate_user
 
   def create
     answer_params = params.require(:answer).permit(:body)
     @q = Question.find params[:question_id]
-    @answer = Answer.new answer_params
+    @answer = current_user.answers.new answer_params
     @answer.question = @q
 
     if @answer.save
@@ -15,6 +16,7 @@ class AnswersController < ApplicationController
 
   def destroy
     answer = Answer.find_by_id params[:id]
+    redirect_to root_path, alert: "Access denied!" and return unless can? :destroy, answer
     if answer
       answer.destroy
       redirect_to question_path(answer.question), notice: "Answer deleted"
@@ -23,4 +25,5 @@ class AnswersController < ApplicationController
     end
 
   end
+
 end

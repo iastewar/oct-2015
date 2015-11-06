@@ -1,0 +1,16 @@
+<h1><%= @p.title %>: <%= @task.title %></h1>
+<p><%= @task.body %></p>
+<p>Due date: <%= @task.due_date.to_formatted_s(:long) %></p>
+<% if @task.done %>
+  <p>Status: Done</p>
+<% else %>
+  <p>Status: Not Done</p>
+<% end %>
+
+<% if @task.done %>
+  <%= link_to "Not Done", done_project_task_path(@p, @task), method: :post, class: "btn btn-warning btn-sm"%>
+<% else %>
+  <%= link_to "Done", done_project_task_path(@p, @task), method: :post, class: "btn btn-success btn-sm"%>
+<% end %>
+<%= link_to "Edit", edit_project_task_path(@p, @task), class: "btn btn-info btn-sm" %>
+<%= link_to "Delete", project_task_path(@p, @task), method: :delete, class: "btn btn-danger btn-sm", data: {confirm: "Are you sure?"}%>
