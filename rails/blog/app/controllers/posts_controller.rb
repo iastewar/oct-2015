@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def create
     @p = Post.new(post_params)
+    @p.user = current_user
     if @p.save
       redirect_to(post_path(@p), notice: "Post created!")
     else
@@ -21,9 +22,11 @@ class PostsController < ApplicationController
   end
 
   def edit
+    redirect_to post_path(@p), alert: "Access denied." and return unless can? :edit, @p
   end
 
   def update
+    redirect_to post_path(@p), alert: "Access denied." and return unless can? :update, @p
     if @p.update post_params
       redirect_to(post_path(@p))
     else
@@ -32,10 +35,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.order(updated_at: :desc)
   end
 
   def destroy
+    redirect_to post_path(@p), alert: "Access denied." and return unless can? :destroy, @p
     @p.destroy
     flash[:notice] = "Post deleted successfully"
     redirect_to posts_path

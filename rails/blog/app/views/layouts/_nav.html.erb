@@ -10,7 +10,8 @@
       <ul class="nav navbar-nav">
         <li> <%= link_to("<i class='glyphicon glyphicon-list-alt'></i> Posts".html_safe, posts_path) %></li>
         <li> <%= link_to("<i class='glyphicon glyphicon-info-sign'></i> About".html_safe, about_path) %></li>
-
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li> <%= link_to("Log Out", sessions_path, method: :delete) %></li>
         <% else %>
