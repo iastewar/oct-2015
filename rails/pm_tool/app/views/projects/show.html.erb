@@ -1,9 +1,14 @@
 <h1><%= @p.title %></h1>
 <p><%= @p.description %></p>
 <p>Due date: <%= @p.due_date.to_formatted_s(:long) if @p.due_date%></p>
+<p>Created by: <%= @p.user.first_name %> <%= @p.user.last_name %></p>
 
-<%= link_to "Edit", edit_project_path(@p), class: "btn btn-info btn-sm" %>
-<%= link_to "Delete", project_path(@p), {method: :delete, class: "btn btn-danger btn-sm", data: {confirm: "Are you sure you want to delete this project?"}}%>
+<% if can? :edit, @p %>
+  <%= link_to "Edit", edit_project_path(@p), class: "btn btn-info btn-sm" %>
+<% end %>
+<% if can? :destroy, @p %>
+  <%= link_to "Delete", project_path(@p), {method: :delete, class: "btn btn-danger btn-sm", data: {confirm: "Are you sure you want to delete this project?"}}%>
+<% end %>
 
 <h2>Tasks</h2>
 <%= link_to("Add Task", new_project_task_path(@p), class: "btn btn-primary") %>
@@ -39,4 +44,4 @@
 <% end %>
 
 
-<%= link_to("View Discussions", project_discussions_path(@p), class: "btn btn-primary") %>
+<%= link_to("View Discussions (#{@p.discussions.length})", project_discussions_path(@p), class: "btn btn-primary") %>

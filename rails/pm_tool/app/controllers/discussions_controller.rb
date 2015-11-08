@@ -1,10 +1,12 @@
 class DiscussionsController < ApplicationController
   before_action :find_project, only: [:create, :edit, :update, :show, :index]
   before_action :find_discussion, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:create, :edit, :update, :destroy]
 
   def create
     @discussion = Discussion.new discussion_params
     @discussion.project = @p
+    @discussion.user = current_user
 
     if @discussion.save
       redirect_to project_discussions_path(@p), notice: "Discussion created succussfully!"
@@ -15,6 +17,7 @@ class DiscussionsController < ApplicationController
   end
 
   def destroy
+    redirect_to project_discussion_path(@p, @discussion), alert: "Access denied." and return unless can? :destroy, @discussion
     @discussion.destroy
     redirect_to project_path(@discussion.project), notice: "Discussion deleted"
   end
@@ -25,6 +28,7 @@ class DiscussionsController < ApplicationController
   end
 
   def edit
+    redirect_to project_discussion_path(@p, @discussion), alert: "Access denied." and return unless can? :edit, @discussion
     @discussions = @p.discussions.order(created_at: :desc)
     render "discussions/index"
   end
@@ -35,6 +39,7 @@ class DiscussionsController < ApplicationController
   end
 
   def update
+    redirect_to project_discussion_path(@p, @discussion), alert: "Access denied." and return unless can? :update, @discussion
     if @discussion.update discussion_params
       redirect_to project_discussions_path(@p)
     else

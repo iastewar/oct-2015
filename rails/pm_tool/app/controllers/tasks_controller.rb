@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :find_project, only: [:new, :create, :edit, :update, :show]
   before_action :find_task, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:new, :create, :edit, :update, :destroy, :done]
 
 
   def new
@@ -11,6 +12,7 @@ class TasksController < ApplicationController
     @task = Task.new task_params
     @task.project = @p
     @task.done = false
+    @task.user = current_user
 
     if @task.save
       redirect_to project_path(@p), notice: "Task created succussfully!"
@@ -22,16 +24,18 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    redirect_to project_task_path(@p, @task), alert: "Access denied." and return unless can? :destroy, @task
     task.destroy
     redirect_to project_path(task.project), notice: "Task deleted"
 
   end
 
   def edit
-
+    redirect_to project_task_path(@p, @task), alert: "Access denied." and return unless can? :edit, @task
   end
 
   def update
+    redirect_to project_task_path(@p, @task), alert: "Access denied." and return unless can? :update, @task
     if @task.update task_params
       redirect_to project_path(@p)
     else
@@ -41,6 +45,7 @@ class TasksController < ApplicationController
 
   def done
     task = Task.find_by_id params[:id]
+    redirect_to project_task_path(task.project, task), alert: "Access denied." and return unless can? :update, task
     task.done = task.done ^= true
     if task.done
       done = "'Done'"

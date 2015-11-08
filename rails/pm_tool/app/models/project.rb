@@ -12,6 +12,7 @@
 
 class Project < ActiveRecord::Base
 #  serialize :task_array, Array
+  belongs_to :user
   has_many :tasks, dependent: :destroy
   has_many :discussions, dependent: :destroy
 

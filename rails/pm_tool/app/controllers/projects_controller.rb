@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @p = Project.new
@@ -7,6 +8,7 @@ class ProjectsController < ApplicationController
 
   def create
     @p = Project.new(project_params)
+    @p.user = current_user
     if @p.save
       redirect_to(project_path(@p), notice: "Project created!")
     else
@@ -21,10 +23,11 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-
+    redirect_to project_path(@p), alert: "Access denied." and return unless can? :edit, @p
   end
 
   def update
+    redirect_to project_path(@p), alert: "Access denied." and return unless can? :update, @p
     if @p.update project_params
       redirect_to(project_path(@p))
     else
@@ -37,6 +40,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    redirect_to project_path(@p), alert: "Access denied." and return unless can? :destroy, @p
     @p.destroy
     flash[:notice] = "Project deleted successfully"
     redirect_to projects_path
