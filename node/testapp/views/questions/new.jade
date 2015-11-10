@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    form#formAddQuestion(name="addquestion",method="post",action="/questions")
+        p Title:
+            input#inputTitle(type="text", placeholder="ex. This is a title", name="title")
+        p Body:
+            input#inputBody(type="text", placeholder="ex. Is this a question?", name="body")
+        p
+            button#btnSubmit(type="submit") submit
