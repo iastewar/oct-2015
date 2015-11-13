@@ -4,8 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var http = require('http');
-var reload = require('reload');
 
 var db = require('./model/db');
 var question = require('./model/questions');
@@ -15,30 +13,6 @@ var questions = require('./routes/questions');
 var users = require('./routes/users');
 
 var app = express();
-
-////// reloader
-
-var publicDir = path.join(__dirname, '')
-
-app.set('port', process.env.PORT || 3001)
-app.use(logger('dev'))
-app.use(bodyParser.json()) //parses json, multi-part (file), url-encoded
-
-app.get('/', function(req, res) {
-  res.sendFile(path.join(publicDir, 'index.html'))
-})
-
-var server = http.createServer(app)
-
-//reload code here
-//optional reload delay and wait argument can be given to reload, refer to [API](https://github.com/jprichardson/reload#api) below
-reload(server, app)
-
-server.listen(app.get('port'), function(){
-  console.log("Web server listening on port " + app.get('port'));
-});
-
-//////
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
