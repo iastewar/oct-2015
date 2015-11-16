@@ -9,6 +9,7 @@ var postSchema = new mongoose.Schema({
 
 // var commentSchema = new mongoose.Schema({
 //   body: String
+//   post_id: {type: String, required: true}
 // });
 
 mongoose.model('Post', postSchema);

@@ -203,6 +203,7 @@ router.delete('/:id/edit', function (req, res){
     });
 });
 
+// create a comment for a post
 router.post('/:post_id/comments', function(req, res) {
     var body = req.body.body;
     var post_id = req.params.post_id;
@@ -231,6 +232,7 @@ router.post('/:post_id/comments', function(req, res) {
     })
   });
 
+// delete a comment for a post
 router.delete('/:post_id/comments/:id/edit', function(req, res) {
   var post_id = req.params.post_id;
   var id  = req.params.id;
