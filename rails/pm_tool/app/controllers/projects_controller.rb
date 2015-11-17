@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
     @tasks_done = @p.tasks.where(done: true)
     @tasks_not_done = @p.tasks.where(done: false)
     @task = Task.new
+    @members = @p.member_users
   end
 
   def edit
@@ -49,7 +50,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit([:title, :description, :due_date])
+    params.require(:project).permit([:title, :description, :due_date, {tag_ids: []}])
   end
 
   def find_project

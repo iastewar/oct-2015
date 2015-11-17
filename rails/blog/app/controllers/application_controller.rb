@@ -18,4 +18,10 @@ class ApplicationController < ActionController::Base
     current_user.present?
   end
   helper_method :user_signed_in?
+
+  def email_comment_summary
+    all_comments_today = Comment.where("created_at >= ?", 1.day.ago)
+    CommentsMailer.comment_summary(all_comments_today, User.all).deliver_later
+  end
+  helper_method :email_comment_summary
 end

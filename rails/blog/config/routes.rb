@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # get "/posts" => "posts#index"
   # delete "/posts/:id" => "posts#destroy"
 
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+
   root "home#home"
 
   get "/home" => "home#home"

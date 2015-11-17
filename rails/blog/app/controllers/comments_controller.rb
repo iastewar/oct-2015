@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
+      CommentsMailer.notify_post_owner(@comment).deliver_later
       redirect_to post_path(@p), notice: "Comment created succussfully!"
     else
       @comments = @p.comments.order(created_at: :desc)

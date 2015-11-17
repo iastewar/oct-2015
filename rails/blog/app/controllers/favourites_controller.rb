@@ -4,6 +4,7 @@ class FavouritesController < ApplicationController
   def create
     fav          = current_user.favourites.new
     post     = Post.find params[:post_id]
+    redirect_to project_path(post), alert: "Access denied." and return if can? :manage, post
     # fav.user     = current_user
     fav.post = post
     if fav.save
@@ -15,6 +16,7 @@ class FavouritesController < ApplicationController
 
   def destroy
     post = Post.find params[:post_id]
+    redirect_to project_path(post), alert: "Access denied." and return if can? :manage, post
     fav      = current_user.favourites.find params[:id]
     fav.destroy
     redirect_to post_path(post), notice: "Unfavourited!"

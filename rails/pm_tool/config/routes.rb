@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+
   root "home#home"
 
   get "/home" => "home#home"
@@ -13,7 +15,12 @@ Rails.application.routes.draw do
     resources :discussions do
       resources :comments
     end
+
+    resources :members, only: [:create, :destroy]
+    resources :favourites, only: [:create, :destroy]
   end
+
+  resources :favourites, only: [:index]
 
   resources :users, only: [:new, :create]
 

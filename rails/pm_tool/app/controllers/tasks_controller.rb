@@ -48,6 +48,7 @@ class TasksController < ApplicationController
     redirect_to project_task_path(task.project, task), alert: "Access denied." and return unless can? :update, task
     task.done = task.done ^= true
     if task.done
+      TasksMailer.notify_task_owner(task, current_user).deliver_later
       done = "'Done'"
     else
       done = "'Not Done'"
