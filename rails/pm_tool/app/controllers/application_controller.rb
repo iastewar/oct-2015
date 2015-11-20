@@ -19,10 +19,4 @@ class ApplicationController < ActionController::Base
   end
   helper_method :user_signed_in?
 
-  def email_task_discussion_summary
-    all_tasks_today = Task.where("created_at >= ?", 1.day.ago)
-    all_discussions_today = Discussion.where("created_at >= ?", 1.day.ago)
-    TasksAndDiscussionsMailer.notify_project_owner(all_tasks_today, all_discussions_today, User.all).deliver_later
-  end
-  helper_method :email_task_discussion_summary
 end

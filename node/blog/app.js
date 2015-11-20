@@ -9,14 +9,15 @@ var flash = require('connect-flash');
 var session = require('express-session');
 
 
-
+// dbs
 var db = require('./model/db');
 var post = require('./model/posts');
 
-var routes = require('./routes/index');
+
+// route paths
+var home = require('./routes/index');
 var posts = require('./routes/posts');
 var users = require('./routes/users');
-//var comments = require('./routes/comments');
 
 var app = express();
 
@@ -38,10 +39,10 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 
-app.use('/', routes);
+// route urls
+app.use('/', home);
 app.use('/posts', posts);
 app.use('/users', users);
-//app.use('/posts/:id/comments', comments);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
