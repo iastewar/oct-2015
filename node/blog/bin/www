@@ -7,7 +7,6 @@
 var app = require('../app');
 var debug = require('debug')('blog:server');
 var http = require('http');
-var reload = require('reload');
 
 
 /**
@@ -26,9 +25,6 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-
-// reload package
-reload(server, app)
 
 server.listen(port);
 server.on('error', onError);

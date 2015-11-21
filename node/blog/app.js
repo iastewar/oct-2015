@@ -12,7 +12,7 @@ var session = require('express-session');
 // dbs
 var db = require('./model/db');
 var post = require('./model/posts');
-
+var user = require('./model/users');
 
 // route paths
 var home = require('./routes/index');
@@ -20,6 +20,8 @@ var posts = require('./routes/posts');
 var users = require('./routes/users');
 
 var app = express();
+
+require('./config/passport')(passport); // pass passport for configuration
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
